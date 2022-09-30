@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "silk",
     # Rest Framework
     "rest_framework",
+    "rest_framework.authtoken",
     # My apps
     "user",
     "budget",
