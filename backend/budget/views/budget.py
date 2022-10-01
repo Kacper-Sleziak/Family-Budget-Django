@@ -25,8 +25,8 @@ class BudgetViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
     pagination_class = StandardPagination
     filter_backends = [DjangoFilterBackend]
     filterset_class = BudgetFilter
-    # authentication_classes = [TokenAuthentication]
-    # permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         queryset = super().get_queryset()
