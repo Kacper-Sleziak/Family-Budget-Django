@@ -18,7 +18,7 @@ class CreateTransaction(views.APIView):
 
     Body:
     "delta_money" : "value" - Income or Expense, for expense delta_money
-    should have ,,-" before value
+    should have "-" before value
     """
 
     authentication_classes = [TokenAuthentication]

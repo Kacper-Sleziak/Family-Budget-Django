@@ -1,4 +1,4 @@
-from rest_framework import mixins, status, views
+from rest_framework import status, views
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 
@@ -38,7 +38,3 @@ class RegisterView(views.APIView):
             feedback_data["token"] = token_key
             return Response(feedback_data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
-# class UserViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
-#     pass

@@ -17,7 +17,8 @@ class BudgetViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
     *page
     *money_min
     *money_max
-    *list - to get budget for exact list user this param
+    *category - one of choices from Category model
+    *list(id) - to get budget for exact list user this param
     """
 
     queryset = Budget.objects.all()

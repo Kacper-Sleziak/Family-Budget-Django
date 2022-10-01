@@ -34,7 +34,7 @@ class ListViewSet(
         View add user to List
 
         Request Body:
-        *user - pk of user that we want to add to list.users
+        *user - id of user that we want to add to list.users
         """
         user = self.get_object()
         list_of_user = List.objects.get(pk=user.id)
