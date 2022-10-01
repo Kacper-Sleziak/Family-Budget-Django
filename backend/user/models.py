@@ -1,3 +1,5 @@
+import email
+
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.db.models.signals import post_save
@@ -17,7 +19,7 @@ class User(AbstractUser):
     objects = CustomUserManager()
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name}"
+        return self.email
 
 
 @receiver(post_save, sender=User)

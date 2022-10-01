@@ -9,7 +9,7 @@ class List(models.Model):
     creator = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name="creator"
     )
-    users = models.ManyToManyField(User, related_name="users")
+    users = models.ManyToManyField(User, related_name="users", blank=True, default=None)
 
     class Meta:
         app_label = "budget"

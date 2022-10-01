@@ -1,11 +1,18 @@
 from django.db import models
 
-from .list import List
-
 
 class Category(models.Model):
-    header = models.CharField(max_length=30)
-    list = models.ForeignKey(List, on_delete=models.CASCADE)
+    CATEGORIES_CHOICES = [
+        ("Sport", "Sport"),
+        ("Health", "Health"),
+        ("Insurance", "Insurance"),
+        ("Food", "Food"),
+        ("Travel", "Travel"),
+    ]
+    header = models.CharField(max_length=15, choices=CATEGORIES_CHOICES)
 
     class Meta:
         app_label = "budget"
+
+    def __str__(self):
+        return self.header

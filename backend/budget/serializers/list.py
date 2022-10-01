@@ -1,7 +1,6 @@
 from rest_framework import serializers
 
 from user.serializers import SimpleUserSerializer
-from utils.serializers import QuerySerializerMixin
 
 from ..models.list import List
 
