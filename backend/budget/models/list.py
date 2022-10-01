@@ -27,7 +27,7 @@ class List(models.Model):
         """
         Check if user should have access to List
         """
-        if user in self.users:
+        if user in self.users.all():
             return True
         return False
 
