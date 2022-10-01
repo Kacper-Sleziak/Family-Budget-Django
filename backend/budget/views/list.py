@@ -1,5 +1,5 @@
 from django.core.exceptions import ObjectDoesNotExist
-from rest_framework import status, viewsets
+from rest_framework import mixins, status, viewsets
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
@@ -12,7 +12,12 @@ from ..models.list import List
 from ..serializers.list import DefaultListSerializer
 
 
-class ListViewSet(viewsets.ModelViewSet):
+class ListViewSet(
+    viewsets.GenericViewSet,
+    mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.CreateModelMixin,
+):
     queryset = List.objects.all()
     serializer_class = DefaultListSerializer
     authentication_classes = [TokenAuthentication]
