@@ -31,6 +31,9 @@ class List(models.Model):
             return True
         return False
 
+    def __str__(self):
+        return f"List of {self.creator}"
+
 
 @receiver(post_save, sender=List)
 def post_create(sender, instance, created, *args, **kwargs):
