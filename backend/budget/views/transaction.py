@@ -11,6 +11,14 @@ from ..serializers.transaction import TransactionSerializer
 class CreateTransaction(views.APIView):
     """
     View create transaction for given in ulr id and delta_money in body
+
+    Permissions:
+    *IsAuthenticated class
+    *has_access function from List model
+
+    Body:
+    "delta_money" : "value" - Income or Expense, for expense delta_money
+    should have ,,-" before value
     """
 
     authentication_classes = [TokenAuthentication]

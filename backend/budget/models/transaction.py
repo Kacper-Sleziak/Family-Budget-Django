@@ -6,8 +6,12 @@ from .budget import Budget
 
 
 class Transaction(models.Model):
-    delta_money = models.DecimalField(max_digits=8, decimal_places=2, default=0)
-    budget = models.ForeignKey(Budget, on_delete=models.CASCADE)
+    delta_money = models.DecimalField(
+        max_digits=8, decimal_places=2, default=0, null=False, blank=False
+    )
+    budget = models.ForeignKey(
+        Budget, on_delete=models.CASCADE, null=False, blank=False
+    )
     created = models.DateTimeField(auto_now_add=True)
 
 

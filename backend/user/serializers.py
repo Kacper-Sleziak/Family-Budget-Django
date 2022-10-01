@@ -1,9 +1,16 @@
 from django.contrib.auth import authenticate
 from rest_framework import serializers
 
+from utils.serializers import ReadOnlyModelSerializer
 from utils.validators import PasswordValidator
 
 from .models import User
+
+
+class SimpleUserSerializer(ReadOnlyModelSerializer):
+    class Meta:
+        model = User
+        fields = ["first_name", "last_name", "email"]
 
 
 class UserSerializer(serializers.ModelSerializer):
