@@ -6,6 +6,7 @@ from django.urls import include, path
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("budget/", include("budget.urls")),
+    path("user/", include("user.urls")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += [path("silk/", include("silk.urls", namespace="silk"))]
