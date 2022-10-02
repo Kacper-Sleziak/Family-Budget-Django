@@ -8,7 +8,7 @@
 
 ## API
 
-### Login
+### Login [POST]
 Return login credentials and informations about user
 <br /> 
 <br /> 
@@ -16,7 +16,7 @@ Return login credentials and informations about user
 
 `Body: email, password`
 
-### Register
+### Register [POST]
 `POST /user/register`
 
 `Body: email, password, password2, first_name, last_name`
