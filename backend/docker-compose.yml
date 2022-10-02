@@ -14,7 +14,5 @@ services:
     db:
         image: postgres
         container_name: db
-        environment:
-        - POSTGRES_DB=abc
-        - POSTGRES_USER=abc
-        - POSTGRES_PASSWORD=abc
+        env_file:
+            - .env
