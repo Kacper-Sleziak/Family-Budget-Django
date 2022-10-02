@@ -9,7 +9,12 @@
 ## API
 
 ### Login
-`GET /user/login`
+`GET /user/login
+
+Body:
+'email'
+'password'
+`
 
 ## How to use
 
