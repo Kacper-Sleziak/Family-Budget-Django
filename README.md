@@ -74,7 +74,7 @@ Category in the body can be one of the valid choices: Sport/Health/Insurance/Foo
 
 SECRET_KEY=Some_Secret_Key 
 
-DEBUG=False
+DEBUG=False 
 
 POSTGRES_DB=abc
 
@@ -92,6 +92,8 @@ Sample you can find in `.env_template`. To generate custome django key you can u
 `docker-compose build` - to pull and build images
 
 `docker-compose up -d` - to run project `-d` flag is optional
+
+6. Finally you can find django working on <a>http://localhost:8000/</a>
 
 
 
