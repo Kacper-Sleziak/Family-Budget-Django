@@ -4,7 +4,7 @@ services:
     django:
         build: .
         container_name: django
-        command: /bin/sh /usr/src/app/scripts/start-django.sh
+        command: /bin/sh /usr/src/app/scripts/docker/start-django.sh
         volumes:
             - .:/usr/src/app
         ports:
