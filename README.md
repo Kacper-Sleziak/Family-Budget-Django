@@ -3,6 +3,13 @@
 ## Description
 Family Budget is the backend of an application created to help people manage their money with few useful tools.
 
+## Technology Stack
+Backend created with help od Django with REST framework.
+
+PostgreSQL as a data base.
+
+Docker for deplyoing local environment.
+
 ## Concept 
 1. One user can have one budget list
 2. On the other hand user can be a participant of many budget lists
@@ -91,19 +98,21 @@ Category in the body can be one of the valid choices: Sport/Health/Insurance/Foo
 2. Create `.env` file in backend folder
 3. Paste to .env: 
 
-SECRET_KEY=Some_Secret_Key 
+`SECRET_KEY=`
 
-DEBUG=False 
+`DEBUG=`
 
-POSTGRES_DB=abc
+`POSTGRES_DB=`
 
-POSTGRES_USER=abc
+`POSTGRES_USER=`
 
-POSTGRES_PASSWORD=abc
+`POSTGRES_PASSWORD=`
 
-POSTGRES_PORT=5432
+`POSTGRES_PORT=`
 
-Sample you can find in `.env_template`. To generate custome django key you can use this website <a>https://djecrety.ir</a>
+Sample how should `.env` look you can find in `.env_template`. 
+
+To generate custome django key i strongely recommend to use this website <a>https://djecrety.ir</a>
 
 4. Install Docker
 5. In `/backend` open terminal and run these command:
