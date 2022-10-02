@@ -9,7 +9,6 @@
 ## API
 
 ### Login
-### Request
 `GET /user/login`
 
 ## How to use
