@@ -4,11 +4,10 @@
 Family Budget is the backend of an application created to help people manage their money with few useful tools.
 
 ## Technology Stack
-Backend created with help od **Django** with **REST framework**.
-
-**PostgreSQL** as a data base.
-
-**Docker** for deplyoing local environment.
+* **Django** 
+* **Django REST framework**
+* **PostgreSQL**
+* **Docker**
 
 ## Concept 
 1. One user can have one budget list
