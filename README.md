@@ -11,9 +11,8 @@
 ### Login
 `GET /user/login`
 
-`Body:`
-'email'
-'password'`
+`Body: email, password`
+
 
 
 ## How to use
