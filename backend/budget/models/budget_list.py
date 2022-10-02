@@ -1,6 +1,4 @@
 from django.db import models
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 
 from user.models import User
 
@@ -33,15 +31,3 @@ class BudgetList(models.Model):
 
     def __str__(self):
         return f"List of {self.creator}"
-
-
-@receiver(post_save, sender=BudgetList)
-def post_create(sender, instance, created, *args, **kwargs):
-    """
-    Add Creator of List instance to users
-    """
-    if not created:
-        return
-
-    instance.users.add(instance.creator)
-    instance.save()

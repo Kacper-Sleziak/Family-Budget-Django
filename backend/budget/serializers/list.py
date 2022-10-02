@@ -28,6 +28,9 @@ class DefaultListSerializer(serializers.ModelSerializer):
     def save(self):
         user = self.context.get("user")
         try:
-            BudgetList.objects.create(creator=user)
+            budget_list = BudgetList.objects.create(creator=user)
         except IntegrityError:
             raise serializers.ValidationError("User already has the list!")
+
+        budget_list.users.add(user)
+        budget_list.save()

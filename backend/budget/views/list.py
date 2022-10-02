@@ -48,6 +48,5 @@ class ListViewSet(
             return Response(status=status.HTTP_404_NOT_FOUND)
 
         list_of_user.users.add(new_user)
-        list_of_user.save()
 
         return Response(status=status.HTTP_200_OK)
