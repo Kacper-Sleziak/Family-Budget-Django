@@ -10,7 +10,7 @@ router.register(r"lists", ListViewSet, basename="user")
 
 urlpatterns = [
     path("create_transaction/<int:budget_pk>", CreateTransaction.as_view()),
-    path("budgetViewSet", BudgetViewSet.as_view({"get": "list"})),
+    path("", BudgetViewSet.as_view({"get": "list"})),
 ]
 
 urlpatterns += router.urls

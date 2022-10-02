@@ -3,6 +3,8 @@ from rest_framework import mixins, viewsets
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
+from core.settings import env
+
 from ..filtersets.budget import BudgetFilter
 from ..models.budget import Budget
 from ..pagination import StandardPagination
@@ -26,8 +28,10 @@ class BudgetViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
     pagination_class = StandardPagination
     filter_backends = [DjangoFilterBackend]
     filterset_class = BudgetFilter
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
+
+    if env("DEBUG"):
+        authentication_classes = [TokenAuthentication]
+        permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         queryset = super().get_queryset()

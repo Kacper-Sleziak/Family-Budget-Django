@@ -27,7 +27,9 @@ class UserSerializer(serializers.ModelSerializer):
         password = data["password"]
         password2 = data["password2"]
 
-        # Using custom validator
+        """
+        Using custom validator
+        """
         password_validator = PasswordValidator(password=password)
         password_validator.validate(length=9, password2=password2)
         return data

@@ -4,6 +4,8 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
+from core.settings import env
+
 from ..models.budget import Budget
 from ..serializers.transaction import TransactionSerializer
 
@@ -21,8 +23,9 @@ class CreateTransaction(views.APIView):
     should have "-" before value
     """
 
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
+    if env("DEBUG"):
+        authentication_classes = [TokenAuthentication]
+        permission_classes = [IsAuthenticated]
 
     def post(self, request, budget_pk):
         try:

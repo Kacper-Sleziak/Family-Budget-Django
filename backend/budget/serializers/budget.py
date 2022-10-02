@@ -7,7 +7,6 @@ from ..serializers.list import ListSerializer
 
 
 class DefaultBudgetSerializer(serializers.ModelSerializer, QuerySerializerMixin):
-    category = serializers.CharField(source="category.header")
     list = ListSerializer()
 
     RELATED_FIELDS = [

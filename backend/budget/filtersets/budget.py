@@ -8,7 +8,6 @@ class BudgetFilter(django_filters.FilterSet):
     title = django_filters.CharFilter(lookup_expr="icontains")
     description = django_filters.CharFilter(lookup_expr="icontains")
     list = django_filters.NumberFilter()
-    category = django_filters.filters.AllValuesFilter(field_name="category__header")
 
     class Meta:
         model = Budget
@@ -19,6 +18,6 @@ class BudgetFilter(django_filters.FilterSet):
             ("money", "money"),
             ("title", "title"),
             ("list__creator__email", "creator"),
-            ("category__header", "category"),
+            ("category", "category"),
         )
     )
