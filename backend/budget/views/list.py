@@ -8,7 +8,7 @@ from rest_framework.response import Response
 from user.models import User
 from utils.permissions import ListCreatorPermission
 
-from ..models.list import List
+from ..models.budget_list import BudgetList
 from ..serializers.list import DefaultListSerializer
 
 
@@ -17,8 +17,9 @@ class ListViewSet(
     mixins.ListModelMixin,
     mixins.RetrieveModelMixin,
     mixins.CreateModelMixin,
+    mixins.DestroyModelMixin,
 ):
-    queryset = List.objects.all()
+    queryset = BudgetList.objects.all()
     serializer_class = DefaultListSerializer
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated, ListCreatorPermission]
@@ -37,7 +38,7 @@ class ListViewSet(
         *user - id of user that we want to add to list.users
         """
         user = self.get_object()
-        list_of_user = List.objects.get(pk=user.id)
+        list_of_user = BudgetList.objects.get(pk=user.id)
 
         try:
             new_user = User.objects.get(pk=int(request.data["user"]))

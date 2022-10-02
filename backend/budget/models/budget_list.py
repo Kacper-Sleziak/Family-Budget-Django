@@ -5,7 +5,7 @@ from django.dispatch import receiver
 from user.models import User
 
 
-class List(models.Model):
+class BudgetList(models.Model):
     creator = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name="creator"
     )
@@ -35,7 +35,7 @@ class List(models.Model):
         return f"List of {self.creator}"
 
 
-@receiver(post_save, sender=List)
+@receiver(post_save, sender=BudgetList)
 def post_create(sender, instance, created, *args, **kwargs):
     """
     Add Creator of List instance to users

@@ -1,6 +1,6 @@
 from django.db import models
 
-from .list import List
+from .budget_list import BudgetList
 
 
 class Budget(models.Model):
@@ -11,7 +11,7 @@ class Budget(models.Model):
         ("Food", "Food"),
         ("Travel", "Travel"),
     ]
-    list = models.ForeignKey(List, on_delete=models.CASCADE)
+    list = models.ForeignKey(BudgetList, on_delete=models.CASCADE)
     title = models.CharField(max_length=30)
     description = models.CharField(max_length=100)
     money = models.DecimalField(max_digits=11, decimal_places=2, default=0)

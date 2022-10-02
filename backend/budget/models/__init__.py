@@ -1,3 +1,3 @@
 from .budget import Budget
-from .list import List
+from .budget_list import BudgetList
 from .transaction import Transaction

@@ -3,7 +3,7 @@ from django.utils.html import format_html_join
 from django.utils.safestring import mark_safe
 
 from .models.budget import Budget
-from .models.list import List
+from .models.budget_list import BudgetList
 from .models.transaction import Transaction
 
 try:
@@ -28,7 +28,7 @@ try:
                 ),
             )
 
-    @admin.register(List)
+    @admin.register(BudgetList)
     class ListAdmin(admin.ModelAdmin):
         list_display = ("creator", "get_users")
 
