@@ -28,6 +28,19 @@ Create transaction for given in request pk of budget
 
 `Body: delta_money, title`
 
+### Create Budget List [POST]
+Create budget list for authenticated user, one can have only one budget list
+
+`Request /budget/lists/`
+
+### Create Budget List [DELETE]
+Delete Budget List, only creator of list can do this operation
+
+`Request /budget/lists/{budget_list_pk}/`
+
+
+
+
 
 ###
 ## How to use
