@@ -11,9 +11,9 @@ Family Budget is the backend of an application created to help people manage the
 
 ## API Documentation
 
-### Authorization
+### Permissions
 Requests that need authentication should contain header with
-`"Authorization" : "Token {Token_key}`
+`"Authorization" : "Token {Token_key}"`
 
 
 ### Login [POST]
@@ -50,16 +50,23 @@ list - id of the budget_list, if we want get budget for specyfic budget_list we 
 Returns budget lists
 `Request /budget/lists`
 
-### Budget List Add User [POST]
+### Budget List Add User [PARCH]
 Adds user to budget list. Operation can be done only by creator of the list.
-`Request /budget/lists/add_new_user/{list_pk}`
+
+`Request /budget/lists/{list_pk}add_new_user/`
+
+`Body: user` 
+
+user in body stands for user's pk
 
 ### Create Transcation [POST]
-Creates transaction for given in request pk of budget
+Creates transaction for given in request pk of budget. 
 
 `Request /budget/create_transaction/{budget_pk}`
 
 `Body: delta_money, title`
+
+For expense delta_money should have ,,-" before number
 
 ### Create Budget List [POST]
 Creates budget list for authenticated user, one can have only one budget list
@@ -103,7 +110,7 @@ Sample you can find in `.env_template`. To generate custome django key you can u
 
 `docker-compose build` - to pull and build images
 
-`docker-compose up -d` - to run project `-d` flag is optional
+`docker-compose up -d` - to run project, `-d` flag is optional
 
 6. Finally you can find django working on <a>http://localhost:8000/</a>
 
