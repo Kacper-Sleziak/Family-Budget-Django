@@ -4,11 +4,11 @@
 Family Budget is the backend of an application created to help people manage their money with few useful tools.
 
 ## Technology Stack
-Backend created with help od Django with REST framework.
+Backend created with help od **Django** with **REST framework**.
 
-PostgreSQL as a data base.
+**PostgreSQL** as a data base.
 
-Docker for deplyoing local environment.
+**Docker** for deplyoing local environment.
 
 ## Concept 
 1. One user can have one budget list
@@ -43,15 +43,15 @@ Returns budgets for given params, accept only authenticated users.
 
 `Params page, money_min, money_max, category, list, ordering`
 
-page - number of the page, view is using pagination
+*page* - number of the page, view is using pagination.
 
-page_size - change standard size of pagination
+*page_size* - change standard size of pagination.
 
-money_min, money_max - can be used both or single, define range of money we want filter.
+*money_min*, money_max - can be used both or single, define range of money we want filter.
 
-category - one of the choices Sport/Health/Insurance/Food/Travel
+*category* - one of the choices Sport/Health/Insurance/Food/Travel.
 
-list - id of the budget_list, if we want get budget for specyfic budget_list we have to use this
+*list* - id of the budget_list, if we want get budgets for specyfic budget_list we have to use this.
 
 ### Budget List View Set [Get]
 Returns budget lists
@@ -64,7 +64,7 @@ Adds user to budget list. Operation can be done only by creator of the list.
 
 `Body: user` 
 
-user in body stands for user's pk
+*user in body stands for user's pk*
 
 ### Create Transcation [POST]
 Creates transaction for given in request pk of budget. 
@@ -115,7 +115,7 @@ Sample how should `.env` look you can find in `.env_template`.
 To generate custome django key i strongely recommend to use this website <a>https://djecrety.ir</a>
 
 4. Install Docker
-5. In `/backend` open terminal and run these command:
+5. In `/backend` open terminal and run these commands:
 
 `docker-compose build` - to pull and build images
 
