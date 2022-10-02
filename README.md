@@ -38,6 +38,11 @@ Delete Budget List, only creator of list can do this operation
 
 `Request /budget/lists/{budget_list_pk}/`
 
+### Create Budget [POST]
+Create budget and add to Budget List with id given in request. This operattio can be done by every user added to budget_list.
+Category in body can be one of valid choices: Sport/Health/Insurance/Food/Travel
+`Request /budget/create_budget/{budget_list_pk}`
+`Body: money, title, description, category`
 
 
 
