@@ -50,7 +50,7 @@ list - id of the budget_list, if we want get budget for specyfic budget_list we 
 Returns budget lists
 `Request /budget/lists`
 
-### Budget List Add User [PARCH]
+### Budget List Add User [PATCH]
 Adds user to budget list. Operation can be done only by creator of the list.
 
 `Request /budget/lists/{list_pk}add_new_user/`
