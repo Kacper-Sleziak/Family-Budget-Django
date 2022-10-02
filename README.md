@@ -9,7 +9,7 @@
 ## API
 
 ### Login
-Return login credentials and informations about user
+Return login credentials and informations about user__
 `GET /user/login`
 
 `Body: email, password`
