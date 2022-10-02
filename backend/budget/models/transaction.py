@@ -1,3 +1,5 @@
+from email.policy import default
+
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -8,6 +10,7 @@ from .budget import Budget
 
 
 class Transaction(models.Model):
+    title = models.CharField(max_length=30, default=None, blank=True, null=True)
     delta_money = models.DecimalField(
         max_digits=8, decimal_places=2, default=0, null=False, blank=False
     )

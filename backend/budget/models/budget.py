@@ -1,4 +1,8 @@
+from enum import unique
+
 from django.db import models
+
+from user.models import User
 
 from .budget_list import BudgetList
 
@@ -11,6 +15,7 @@ class Budget(models.Model):
         ("Food", "Food"),
         ("Travel", "Travel"),
     ]
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     list = models.ForeignKey(BudgetList, on_delete=models.CASCADE)
     title = models.CharField(max_length=30)
     description = models.CharField(max_length=100)
