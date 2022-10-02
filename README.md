@@ -6,6 +6,19 @@
 
 ## Data Base Diagram
 
-## API 
+## API
+ Method | URL         | Body            | Authorization | Description                              |   |   |   |   |   
+--------|-------------|-----------------|---------------|------------------------------------------|---|---|---|---|---
+ POST   | /user/login | email, password | None          | Return token and informations about user |   |   |   |   |   
+        |             |                 |               |                                          |   |   |   |   |   
+        |             |                 |               |                                          |   |   |   |   |   
+        |             |                 |               |                                          |   |   |   |   |   
+        |             |                 |               |                                          |   |   |   |   |   
+        |             |                 |               |                                          |   |   |   |   |   
+        |             |                 |               |                                          |   |   |   |   |   
+        |             |                 |               |                                          |   |   |   |   |   
+        |             |                 |               |                                          |   |   |   |   |   
+
+
 
 ## How to use
