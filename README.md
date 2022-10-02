@@ -11,6 +11,11 @@ Family Budget is the backend of an application created to help people manage the
 
 ## API Documentation
 
+### Authorization
+Requests that need authentication should contain header with
+`"Authorization" : "Token {Token_key}`
+
+
 ### Login [POST]
 Returns login credentials and informations about user
 
@@ -41,6 +46,13 @@ category - one of the choices Sport/Health/Insurance/Food/Travel
 
 list - id of the budget_list, if we want get budget for specyfic budget_list we have to use this
 
+### Budget List View Set [Get]
+Returns budget lists
+`Request /budget/lists`
+
+### Budget List Add User [POST]
+Adds user to budget list. Operation can be done only by creator of the list.
+`Request /budget/lists/add_new_user/{list_pk}`
 
 ### Create Transcation [POST]
 Creates transaction for given in request pk of budget
