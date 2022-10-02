@@ -10,7 +10,7 @@
 
 ### Login
 Return login credentials and informations about user
-#
+<br /> 
 `GET /user/login`
 
 `Body: email, password`
