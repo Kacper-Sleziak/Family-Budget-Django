@@ -12,8 +12,8 @@
 `GET /user/login`
 
 `Body:`
-`'email'`
-`'password'`
+'email'
+'password'`
 
 
 ## How to use
