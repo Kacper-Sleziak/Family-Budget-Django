@@ -36,7 +36,7 @@ Returns login credentials and informations about user
 
 `Body: email, password, password2, first_name, last_name`
 
-### Budget View Set [Get]
+### Budget View Set [GET]
 Returns budgets for given params, accept only authenticated users.
 
 `Request /budget`
@@ -53,7 +53,7 @@ Returns budgets for given params, accept only authenticated users.
 
 *list* - id of the budget_list, if we want get budgets for specyfic budget_list we have to use this.
 
-### Budget List View Set [Get]
+### Budget List View Set [GET]
 Returns budget lists
 `Request /budget/lists`
 
