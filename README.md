@@ -30,6 +30,8 @@ Return budgets for given params, accept only authenticated users.
 
 page - number of the page, view is using pagination
 
+page_size - change standard size of pagination
+
 money_min, money_max - can be used both or single, define range of money we want filter.
 
 category - one of the choices Sport/Health/Insurance/Food/Travel
@@ -53,6 +55,14 @@ Create budget list for authenticated user, one can have only one budget list
 Delete Budget List, only creator of list can do this operation
 
 `Request /budget/lists/{budget_list_pk}/`
+
+### Create Budget [POST]
+Create budget and add to Budget List with id given in request. This operattio can be done by every user added to budget_list.
+Category in body can be one of valid choices: Sport/Health/Insurance/Food/Travel
+
+`Request /budget/create_budget/{budget_list_pk}`
+
+`Body: money, title, description, category`
 
 
 
