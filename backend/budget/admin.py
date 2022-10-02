@@ -10,7 +10,14 @@ try:
 
     @admin.register(Budget)
     class BudgetAdmin(admin.ModelAdmin):
-        list_display = ("title", "category", "money", "get_creator", "get_transactions")
+        list_display = (
+            "pk",
+            "title",
+            "category",
+            "money",
+            "get_creator",
+            "get_transactions",
+        )
         list_filter = ("category",)
 
         @admin.display(description="list creator")
@@ -30,7 +37,7 @@ try:
 
     @admin.register(BudgetList)
     class ListAdmin(admin.ModelAdmin):
-        list_display = ("creator", "get_users")
+        list_display = ("pk", "creator", "get_users")
 
         @admin.display(description="users")
         def get_users(self, obj):
@@ -42,7 +49,7 @@ try:
 
     @admin.register(Transaction)
     class TransactionAdmin(admin.ModelAdmin):
-        list_display = ("delta_money", "get_budget", "created")
+        list_display = ("pk", "delta_money", "get_budget", "created")
 
         @admin.display(description="budget")
         def get_budget(self, obj):
