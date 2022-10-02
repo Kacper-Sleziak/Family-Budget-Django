@@ -19,6 +19,10 @@ class User(AbstractUser):
     def __str__(self):
         return self.email
 
+    @property
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
+
 
 @receiver(post_save, sender=User)
 def create_token_for_user(sender, instance, created=False, *args, **kwargs):

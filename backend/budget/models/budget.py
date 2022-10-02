@@ -19,3 +19,6 @@ class Budget(models.Model):
 
     class Meta:
         app_label = "budget"
+
+    def __str__(self):
+        return f"{self.title}/{self.list.creator}"
