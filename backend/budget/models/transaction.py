@@ -2,6 +2,8 @@ from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+from user.models import User
+
 from .budget import Budget
 
 
@@ -13,6 +15,7 @@ class Transaction(models.Model):
         Budget, on_delete=models.CASCADE, null=False, blank=False
     )
     created = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
 
 @receiver(post_save, sender=Transaction)

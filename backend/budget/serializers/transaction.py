@@ -13,6 +13,7 @@ class TransactionSerializer(serializers.ModelSerializer):
 
     def save(self):
         budget = self.context.get("budget")
+        user = self.context.get("user")
         delta_money = self.validated_data.get("delta_money")
 
-        Transaction.objects.create(budget=budget, delta_money=delta_money)
+        Transaction.objects.create(budget=budget, delta_money=delta_money, user=user)

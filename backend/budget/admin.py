@@ -1,4 +1,3 @@
-# Register your models here.
 from django.contrib import admin
 from django.utils.html import format_html_join
 from django.utils.safestring import mark_safe
@@ -24,7 +23,7 @@ try:
                 mark_safe("<br>"),
                 "{}",
                 (
-                    (transaction.delta_money,)
+                    (f"{transaction.delta_money} by {transaction.user.full_name}",)
                     for transaction in Transaction.objects.filter(budget=obj)
                 ),
             )
