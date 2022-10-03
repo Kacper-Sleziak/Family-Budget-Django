@@ -52,9 +52,22 @@ Returns budgets for given params, accept only authenticated users.
 
 *list* - id of the budget_list, if we want get budgets for specyfic budget_list we have to use this.
 
+*ordering* - available options are `creator`, `money`, `title`, `category`, 
+
 ### Budget List View Set [GET]
-Returns budget lists
+Returns budget lists for given params, accept only authenticated users.
+
 `Request /budget/lists`
+
+`Params creator, page, ordering`
+
+*creator* - with this param, endpoint will return data if param contain email, first name ra last name of creator.
+
+*page* - number of the page, view is using pagination.
+
+*page_size* - change standard size of pagination.
+
+*ordering* - only available option is `creator`, with this ordering, data going to be ordered by email of list's creator
 
 ### Budget List Add User [PATCH]
 Adds user to budget list. Operation can be done only by creator of the list.
@@ -120,7 +133,7 @@ To generate custome django key i strongely recommend to use this website <a>http
 
 `docker-compose up -d` - to run project, `-d` flag is optional
 
-6. Finally you can find django working on <a>http://localhost:8000/</a>
+6. Finally you can find server working on <a>http://localhost:8000/</a>
 
 
 
