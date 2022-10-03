@@ -3,6 +3,12 @@
 ## Description
 Family Budget is the backend of an application created to help people manage their money with few useful tools.
 
+## Technology Stack
+* **Django** 
+* **Django REST framework**
+* **PostgreSQL**
+* **Docker**
+
 ## Concept 
 1. One user can have one budget list
 2. On the other hand user can be a participant of many budget lists
@@ -29,24 +35,24 @@ Returns login credentials and informations about user
 
 `Body: email, password, password2, first_name, last_name`
 
-### Budget View Set [Get]
+### Budget View Set [GET]
 Returns budgets for given params, accept only authenticated users.
 
 `Request /budget`
 
 `Params page, money_min, money_max, category, list, ordering`
 
-page - number of the page, view is using pagination
+*page* - number of the page, view is using pagination.
 
-page_size - change standard size of pagination
+*page_size* - change standard size of pagination.
 
-money_min, money_max - can be used both or single, define range of money we want filter.
+*money_min*, money_max - can be used both or single, define range of money we want filter.
 
-category - one of the choices Sport/Health/Insurance/Food/Travel
+*category* - one of the choices Sport/Health/Insurance/Food/Travel.
 
-list - id of the budget_list, if we want get budget for specyfic budget_list we have to use this
+*list* - id of the budget_list, if we want get budgets for specyfic budget_list we have to use this.
 
-### Budget List View Set [Get]
+### Budget List View Set [GET]
 Returns budget lists
 `Request /budget/lists`
 
@@ -57,7 +63,7 @@ Adds user to budget list. Operation can be done only by creator of the list.
 
 `Body: user` 
 
-user in body stands for user's pk
+*user in body stands for user's pk*
 
 ### Create Transcation [POST]
 Creates transaction for given in request pk of budget. 
@@ -91,22 +97,24 @@ Category in the body can be one of the valid choices: Sport/Health/Insurance/Foo
 2. Create `.env` file in backend folder
 3. Paste to .env: 
 
-SECRET_KEY=Some_Secret_Key 
+`SECRET_KEY=`
 
-DEBUG=False 
+`DEBUG=`
 
-POSTGRES_DB=abc
+`POSTGRES_DB=`
 
-POSTGRES_USER=abc
+`POSTGRES_USER=`
 
-POSTGRES_PASSWORD=abc
+`POSTGRES_PASSWORD=`
 
-POSTGRES_PORT=5432
+`POSTGRES_PORT=`
 
-Sample you can find in `.env_template`. To generate custome django key you can use this website <a>https://djecrety.ir</a>
+Sample how should `.env` look you can find in `.env_template`. 
+
+To generate custome django key i strongely recommend to use this website <a>https://djecrety.ir</a>
 
 4. Install Docker
-5. In `/backend` open terminal and run these command:
+5. In `/backend` open terminal and run these commands:
 
 `docker-compose build` - to pull and build images
 
