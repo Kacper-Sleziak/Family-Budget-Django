@@ -8,9 +8,17 @@ from .models import User
 
 
 class SimpleUserSerializer(ReadOnlyModelSerializer):
+    first_name = serializers.CharField()
+    last_name = serializers.CharField()
+    email = serializers.EmailField()
+
     class Meta:
         model = User
-        fields = ["first_name", "last_name", "email"]
+        fields = [
+            "email",
+            "first_name",
+            "last_name",
+        ]
 
 
 class UserSerializer(serializers.ModelSerializer):

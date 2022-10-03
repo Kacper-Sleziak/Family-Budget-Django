@@ -16,7 +16,8 @@ class ListSerializer(serializers.ModelSerializer):
 
 
 class DefaultListSerializer(serializers.ModelSerializer):
-    creator = serializers.CharField(source="creator__email", read_only=True)
+    creator = SimpleUserSerializer(read_only=True)
+    users = SimpleUserSerializer(many=True, read_only=True)
 
     class Meta:
         model = BudgetList

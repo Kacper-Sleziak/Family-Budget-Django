@@ -1,4 +1,5 @@
 from django.core.exceptions import ObjectDoesNotExist
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import mixins, status, viewsets
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import action
@@ -8,7 +9,9 @@ from rest_framework.response import Response
 from user.models import User
 from utils.permissions import ListCreatorPermission
 
+from ..filtersets.list import BudgetListFilter
 from ..models.budget_list import BudgetList
+from ..pagination import StandardPagination
 from ..serializers.list import DefaultListSerializer
 
 
@@ -23,6 +26,9 @@ class ListViewSet(
     serializer_class = DefaultListSerializer
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated, ListCreatorPermission]
+    pagination_class = StandardPagination
+    filter_backends = [DjangoFilterBackend]
+    filterset_class = BudgetListFilter
 
     def get_serializer_context(self):
         context = super(ListViewSet, self).get_serializer_context()
